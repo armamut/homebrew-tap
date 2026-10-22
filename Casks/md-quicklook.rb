@@ -13,15 +13,9 @@ cask "md-quicklook" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "MD QuickLook.app"
-
-  postflight do
-    system_command "/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister",
-                   args: ["-f", "-R", "#{appdir}/MD QuickLook.app"]
-    system_command "/usr/bin/qlmanage", args: ["-r"]
-  end
 
   zap trash: [
     "~/Library/Containers/io.github.armamut.mdquicklook.preview",
@@ -30,7 +24,7 @@ cask "md-quicklook" do
   ]
 
   caveats <<~EOS
-    If previews do not appear, open MD QuickLook once and check that it is enabled in
-    System Settings > General > Login Items & Extensions > Quick Look.
+    Open MD QuickLook once to register its Quick Look extensions. If previews do not
+    appear, check that it is enabled in System Settings > General > Login Items & Extensions > Quick Look.
   EOS
 end
