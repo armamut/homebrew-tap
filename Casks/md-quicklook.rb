@@ -1,6 +1,6 @@
 cask "md-quicklook" do
-  version "1.2.4"
-  sha256 "679750b3feb6352b0a347ed19d7f9ac197b969ac9c04e12f1f1701e3e7cf1187"
+  version "1.2.5"
+  sha256 "60274662a33ad323c7ed907f562868d8ff96ecc26d17f667ce7e221d7e9aeea4"
 
   url "https://github.com/armamut/md-quicklook/releases/download/v#{version}/MD-QuickLook-#{version}.zip"
   name "MD QuickLook"
